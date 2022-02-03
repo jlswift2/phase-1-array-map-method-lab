@@ -12,5 +12,20 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  let breakTheArray = tutorials.map(toTitle) 
+  console.log(breakTheArray)
+  return breakTheArray
 }
+
+function toTitle(string) {
+  // let lower = string.toLowerCase()
+  // console.log(lower)
+  let stringSplit = string.split(' ');
+  // console.log(stringSplit)
+  let camelString = stringSplit.map(element => (element.charAt(0).toUpperCase() + element.slice(1)));
+  // console.log(camelString)
+  return camelString.join(' ')
+}
+
+titleCased()
+// console.log(toTitle('Help me I AM trapped'))
